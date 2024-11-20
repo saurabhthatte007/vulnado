@@ -87,7 +87,7 @@ public class Postgres {
         }
     }
 
-    private static void insertUser(String username, String password) {
+    private static void insertUser(String t1, String t2) {
        String sql = "INSERT INTO users (user_id, username, password, created_on) VALUES (?, ?, ?, current_timestamp)";
        PreparedStatement pStatement = null;
        try {
@@ -101,7 +101,7 @@ public class Postgres {
        }
     }
 
-    private static void insertComment(String t1, String password) {
+    private static void insertComment(String t1, String t2) {
         PreparedStatement pStatement = null;
           System.out.println("Setting up Database...");
             Connection c = connection();
