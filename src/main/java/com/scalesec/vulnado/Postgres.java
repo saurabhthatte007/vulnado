@@ -101,17 +101,11 @@ public class Postgres {
        }
     }
 
-    private static void insertComment(String t1, String t2) {
-       String sql = "INSERT INTO users (user_id, username, password, created_on) VALUES (?, ?, ?, current_timestamp)";
-       PreparedStatement pStatement = null;
-       try {
-          pStatement = connection().prepareStatement(sql);
-          pStatement.setString(1, UUID.randomUUID().toString());
-          pStatement.setString(2, t1);
-          pStatement.setString(3, md5(t2));
-          pStatement.executeUpdate();
-       } catch(Exception e) {
-         e.printStackTrace();
-       }
+    private static void insertComment(String t1, String password) {
+        PreparedStatement pStatement = null;
+          System.out.println("Setting up Database...");
+            Connection c = connection();
+            Statement stmt = c.createStatement();
+
     }
 }
