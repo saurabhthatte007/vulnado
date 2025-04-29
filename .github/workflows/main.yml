@@ -15,3 +15,4 @@ jobs:
         with:
           apikey: ${{ secrets.SEC1_API_KEY }}
           scanType: sast
+          scanThreshold: critical=1 high=1
