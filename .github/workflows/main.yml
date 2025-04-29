@@ -1,0 +1,17 @@
+name: Sec1 Security Scan 
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@master
+      - name: Print all environment variables
+        run: env | sort
+      - name: Run Sec1 Scan to check for sast scan
+        uses: sec0ne/actions/security@main
+        with:
+          apikey: ${{ secrets.SEC1_API_KEY }}
+          scanType: sast
