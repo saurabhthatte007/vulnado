@@ -1,7 +1,7 @@
 name: Sec1 Security Scan 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
 jobs:
   security:
     runs-on: ubuntu-latest
